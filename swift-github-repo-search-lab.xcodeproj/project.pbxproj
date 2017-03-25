@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B15A1391DC29F9D00B15C9F /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B15A1381DC29F9D00B15C9F /* Secrets.swift */; };
 		1B15A13D1DC2A09900B15C9F /* not_starred.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B15A13B1DC2A09900B15C9F /* not_starred.json */; };
 		1B15A13E1DC2A09900B15C9F /* repositories.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B15A13C1DC2A09900B15C9F /* repositories.json */; };
 		1BF884A81DBE950C001E9E9B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF884A71DBE950C001E9E9B /* AppDelegate.swift */; };
-		1BF884AA1DBE950C001E9E9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF884A91DBE950C001E9E9B /* ViewController.swift */; };
 		1BF884AF1DBE950C001E9E9B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BF884AE1DBE950C001E9E9B /* Assets.xcassets */; };
 		1BF884B21DBE950C001E9E9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BF884B01DBE950C001E9E9B /* LaunchScreen.storyboard */; };
+		6E9182B31E86E31E006CD5EE /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9182AE1E86E31E006CD5EE /* GithubAPIClient.swift */; };
+		6E9182B41E86E31E006CD5EE /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9182AF1E86E31E006CD5EE /* GithubRepository.swift */; };
+		6E9182B51E86E31E006CD5EE /* ReposDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9182B01E86E31E006CD5EE /* ReposDataStore.swift */; };
+		6E9182B61E86E31E006CD5EE /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9182B11E86E31E006CD5EE /* ReposTableViewController.swift */; };
+		6E9182B71E86E31E006CD5EE /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9182B21E86E31E006CD5EE /* Secrets.swift */; };
+		6E9182B91E86E33D006CD5EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E9182B81E86E33D006CD5EE /* Main.storyboard */; };
 		8F33DF701E37B20100861BA9 /* swift_github_repo_search_labTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33DF6F1E37B20100861BA9 /* swift_github_repo_search_labTests.swift */; };
 		8F33DF7D1E37B22100861BA9 /* GithubAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33DF771E37B22100861BA9 /* GithubAPIClientSpec.swift */; };
 		8F33DF7E1E37B22100861BA9 /* GithubRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F33DF781E37B22100861BA9 /* GithubRepositorySpec.swift */; };
@@ -37,17 +41,21 @@
 
 /* Begin PBXFileReference section */
 		06179FC97D4CCA9AF9531AF7 /* Pods-swift-github-repo-search-lab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-github-repo-search-lab.debug.xcconfig"; path = "Pods/Target Support Files/Pods-swift-github-repo-search-lab/Pods-swift-github-repo-search-lab.debug.xcconfig"; sourceTree = "<group>"; };
-		1B15A1381DC29F9D00B15C9F /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		1B15A13B1DC2A09900B15C9F /* not_starred.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = not_starred.json; sourceTree = "<group>"; };
 		1B15A13C1DC2A09900B15C9F /* repositories.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = repositories.json; sourceTree = "<group>"; };
 		1BF884A41DBE950C001E9E9B /* swift-github-repo-search-lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-github-repo-search-lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BF884A71DBE950C001E9E9B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1BF884A91DBE950C001E9E9B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1BF884AE1DBE950C001E9E9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1BF884B11DBE950C001E9E9B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1BF884B31DBE950C001E9E9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26B167F6C19D8C9E9C5B7D1B /* Pods_swift_github_repo_search_labTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift_github_repo_search_labTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DCF8E2B93675A97DA4ECCEF /* Pods-swift-github-repo-search-labTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-swift-github-repo-search-labTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-swift-github-repo-search-labTests/Pods-swift-github-repo-search-labTests.release.xcconfig"; sourceTree = "<group>"; };
+		6E9182AE1E86E31E006CD5EE /* GithubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
+		6E9182AF1E86E31E006CD5EE /* GithubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
+		6E9182B01E86E31E006CD5EE /* ReposDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposDataStore.swift; sourceTree = "<group>"; };
+		6E9182B11E86E31E006CD5EE /* ReposTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
+		6E9182B21E86E31E006CD5EE /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		6E9182B81E86E33D006CD5EE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8F33DF6D1E37B20100861BA9 /* swift-github-repo-search-labTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "swift-github-repo-search-labTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F33DF6F1E37B20100861BA9 /* swift_github_repo_search_labTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_github_repo_search_labTests.swift; sourceTree = "<group>"; };
 		8F33DF711E37B20100861BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +106,7 @@
 				1B15A13C1DC2A09900B15C9F /* repositories.json */,
 				1BF884AE1DBE950C001E9E9B /* Assets.xcassets */,
 				1BF884B01DBE950C001E9E9B /* LaunchScreen.storyboard */,
+				6E9182B81E86E33D006CD5EE /* Main.storyboard */,
 				1BF884B31DBE950C001E9E9B /* Info.plist */,
 			);
 			name = Resources;
@@ -127,8 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				1BF884A71DBE950C001E9E9B /* AppDelegate.swift */,
-				1BF884A91DBE950C001E9E9B /* ViewController.swift */,
-				1B15A1381DC29F9D00B15C9F /* Secrets.swift */,
+				6E9182AE1E86E31E006CD5EE /* GithubAPIClient.swift */,
+				6E9182AF1E86E31E006CD5EE /* GithubRepository.swift */,
+				6E9182B01E86E31E006CD5EE /* ReposDataStore.swift */,
+				6E9182B11E86E31E006CD5EE /* ReposTableViewController.swift */,
+				6E9182B21E86E31E006CD5EE /* Secrets.swift */,
 				1B15A13A1DC29FA500B15C9F /* Resources */,
 			);
 			path = "swift-github-repo-search-lab";
@@ -211,7 +223,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Flatiron School";
 				TargetAttributes = {
 					1BF884A31DBE950C001E9E9B = {
@@ -252,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BF884B21DBE950C001E9E9B /* LaunchScreen.storyboard in Resources */,
+				6E9182B91E86E33D006CD5EE /* Main.storyboard in Resources */,
 				1B15A13E1DC2A09900B15C9F /* repositories.json in Resources */,
 				1BF884AF1DBE950C001E9E9B /* Assets.xcassets in Resources */,
 				1B15A13D1DC2A09900B15C9F /* not_starred.json in Resources */,
@@ -367,9 +380,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BF884AA1DBE950C001E9E9B /* ViewController.swift in Sources */,
-				1B15A1391DC29F9D00B15C9F /* Secrets.swift in Sources */,
+				6E9182B41E86E31E006CD5EE /* GithubRepository.swift in Sources */,
+				6E9182B71E86E31E006CD5EE /* Secrets.swift in Sources */,
+				6E9182B51E86E31E006CD5EE /* ReposDataStore.swift in Sources */,
 				1BF884A81DBE950C001E9E9B /* AppDelegate.swift in Sources */,
+				6E9182B31E86E31E006CD5EE /* GithubAPIClient.swift in Sources */,
+				6E9182B61E86E31E006CD5EE /* ReposTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +441,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -475,6 +492,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -504,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06179FC97D4CCA9AF9531AF7 /* Pods-swift-github-repo-search-lab.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KXY9EDFTF5;
 				INFOPLIST_FILE = "swift-github-repo-search-lab/Info.plist";
@@ -518,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BA7C84CC2EF21A27A02CA364 /* Pods-swift-github-repo-search-lab.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = KXY9EDFTF5;
 				INFOPLIST_FILE = "swift-github-repo-search-lab/Info.plist";
@@ -532,6 +552,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C025739EB9B933F0ED50D4A4 /* Pods-swift-github-repo-search-labTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEVELOPMENT_TEAM = WNAGBXF4G9;
@@ -549,6 +570,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DCF8E2B93675A97DA4ECCEF /* Pods-swift-github-repo-search-labTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEVELOPMENT_TEAM = WNAGBXF4G9;
