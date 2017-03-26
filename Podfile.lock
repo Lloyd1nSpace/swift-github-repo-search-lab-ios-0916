@@ -18,6 +18,7 @@ PODS:
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (5.2.3)
   - Quick (1.0.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - Nimble
   - OHHTTPStubs
   - Quick
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -32,7 +34,8 @@ SPEC CHECKSUMS:
   Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
   OHHTTPStubs: e238cd5b66d8efa51c861db45895de8fe079f4a7
   Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: af4f870ed5e2093fbf6e8b1a9997d8082651f4f1
+PODFILE CHECKSUM: 56a72cc2df0ec36f254daac0db4e6f8807f9303e
 
 COCOAPODS: 1.1.1
