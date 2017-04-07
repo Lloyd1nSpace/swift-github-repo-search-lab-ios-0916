@@ -91,8 +91,26 @@ struct GithubAPIClient {
         }).resume()
     }
     
-    static func searchRepositories(searchText: String, completion: @escaping () -> ()) {
-        
+    static func searchRepositories(searchText: String, completion: @escaping ([String : Any]?, Error?) -> ()) {
+        let urlString = "https://api.github.com/search/repositories?q=\(searchText)"
+        guard let url = URL(string: urlString) else {
+            print("There was an error unwrapping the URL in the GitHubAPIClient")
+            return
+        }
+        _ = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
+                let repos = json["items"] as? [[String: Any]] {
+                    for repo in repos {
+                        completion(repo, nil)
+                    }
+                }
+            } catch {
+                print("There was an issue trying to search repos in the GitHubAPIClient: \(error.localizedDescription)")
+                completion(nil, error)
+            }
+        })
     }
     
 }
