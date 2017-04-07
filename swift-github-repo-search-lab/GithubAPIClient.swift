@@ -35,9 +35,6 @@ struct GithubAPIClient {
     
     static func starRepository(named: String, completion: @escaping () -> ()) {
         let urlString = "https://api.github.com/user/starred/\(named)?access_token=\(Secrets.personalAccessToken)"
-        
-        
-
         guard let url = URL(string:  urlString) else {
             print("There was an error unwrapping the URL in the GithubAPIClient")
             return
@@ -69,6 +66,10 @@ struct GithubAPIClient {
                 }
             }
         }).resume()
+    }
+    
+    static func searchRepositories(searchText: String, completion: @escaping () -> ()) {
+        
     }
     
 }

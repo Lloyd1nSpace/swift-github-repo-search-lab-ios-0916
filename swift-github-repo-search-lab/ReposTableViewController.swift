@@ -16,11 +16,24 @@ class ReposTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.accessibilityLabel = "tableView"
         tableView.accessibilityIdentifier = "tableView"
-        store.getRepositoriesFromAPI {
+        store.getRepositoriesFromAPI  { [weak self] in
+            guard let strongSelf = self else { return }
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                strongSelf.tableView.reloadData()
             }
         }
+    }
+    
+    @IBAction func searchButtonTapped(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Search Repos", message: "", preferredStyle: .alert)
+        alertVC.addTextField(configurationHandler: nil)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertVC.addAction(okAction)
+        alertVC.addAction(cancelAction)
+        present(alertVC, animated: true, completion: nil)
     }
 }
 
