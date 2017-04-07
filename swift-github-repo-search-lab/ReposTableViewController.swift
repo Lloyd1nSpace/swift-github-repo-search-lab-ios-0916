@@ -27,8 +27,16 @@ class ReposTableViewController: UITableViewController {
     @IBAction func searchButtonTapped(_ sender: Any) {
         let alertVC = UIAlertController(title: "Search Repos", message: "", preferredStyle: .alert)
         alertVC.addTextField(configurationHandler: nil)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in
-            
+        let okAction = UIAlertAction(title: "Ok", style: .default) { [weak self] (action) in
+            guard let strongSelf = self else { return }
+            if let textField = alertVC.textFields?[0],
+                let searchText = textField.text {
+                strongSelf.store.searchRepositories(searchText, completion: {
+                    DispatchQueue.main.async {
+                        strongSelf.tableView.reloadData()
+                    }
+                })
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alertVC.addAction(okAction)

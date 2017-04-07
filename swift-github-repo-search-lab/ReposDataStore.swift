@@ -40,5 +40,17 @@ class ReposDataStore {
             }
         }
     }
+ 
+    func searchRepositories(_ searchText: String, completion: @escaping () -> ()) {
+        GithubAPIClient.searchRepositories(searchText) { [weak self] (repo, error) in
+            guard let strongSelf = self else { return }
+            if let repo = repo {
+                strongSelf.repositories.append(GithubRepository(dictionary: repo))
+                completion()
+            } else if error != nil {
+                print("There was an error searching repos in the DataStore")
+            }
+        }
+    }
     
 }

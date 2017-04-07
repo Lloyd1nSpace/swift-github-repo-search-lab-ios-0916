@@ -91,7 +91,7 @@ struct GithubAPIClient {
         }).resume()
     }
     
-    static func searchRepositories(searchText: String, completion: @escaping ([String : Any]?, Error?) -> ()) {
+    static func searchRepositories(_ searchText: String, completion: @escaping ([String : Any]?, Error?) -> ()) {
         let urlString = "https://api.github.com/search/repositories?q=\(searchText)"
         guard let url = URL(string: urlString) else {
             print("There was an error unwrapping the URL in the GitHubAPIClient")
