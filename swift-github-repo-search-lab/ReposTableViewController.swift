@@ -16,12 +16,15 @@ class ReposTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.accessibilityLabel = "tableView"
         tableView.accessibilityIdentifier = "tableView"
-        store.getRepositoriesFromAPI  { [weak self] in
-            guard let strongSelf = self else { return }
+        store.getRepositoriesFromAPI  {
             DispatchQueue.main.async {
-                strongSelf.tableView.reloadData()
+                self.tableView.reloadData()
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
@@ -40,6 +43,7 @@ class ReposTableViewController: UITableViewController {
 //MARK: tableView Data Source
 extension ReposTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("This is the repos count: \(store.repositories.count)")
         return store.repositories.count
     }
     
