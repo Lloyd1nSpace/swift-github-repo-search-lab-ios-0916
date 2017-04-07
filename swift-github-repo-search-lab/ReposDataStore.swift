@@ -14,9 +14,10 @@ class ReposDataStore {
     func getRepositoriesFromAPI(_ completion: @escaping () -> ()) {
         repositories = []
         
-        GithubAPIClient.getRepositories { (repos, error) in
+        GithubAPIClient.getRepositories { [weak self] (repos, error) in
+            guard let strongSelf = self else { return }
             if let repos = repos {
-                self.repositories.append(GithubRepository(dictionary: repos))
+                strongSelf.repositories.append(GithubRepository(dictionary: repos))
                 completion()
             } else if let error = error {
                 print("There was an error appending the repo to the repositories array in the ReposDataStore: \(error.localizedDescription)")
